@@ -44,7 +44,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: echo "Deploying branch $GITHUB_REF to DEVELOPMENT"
-      - run: npm install wrangler
+      - run: npm install wrangler@2.1.10
       - run: npm run deploy:dev
 
   deploy-to-prod:
@@ -66,5 +66,5 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - run: echo "Deploying branch $GITHUB_REF to PRODUCTION"
-      - run: npm install wrangler
+      - run: npm install wrangler@2.1.10
       - run: npm run deploy:prod
