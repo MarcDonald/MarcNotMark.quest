@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ['*']
+  pull_request:
+    branches: ['*']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: echo "Building branch $GITHUB_REF"
+      - run: npm ci
+      - run: npm run build
+      - run: npm run format
+      - run: npm run lint
+      - run: npm test
+
+  deploy-to-dev:
+    if: ${{ github.ref == 'refs/heads/development' }}
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: Development
+      url: https://development.marcnotmark.quest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: echo "Deploying branch $GITHUB_REF to DEVELOPMENT"
+      - run: npm install wrangler
+      - run: npm run deploy:dev
+
+  deploy-to-prod:
+    if: ${{ github.ref == 'refs/heads/main' }}
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: Production
+      url: https://marcnotmark.quest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: echo "Deploying branch $GITHUB_REF to PRODUCTION"
+      - run: npm install wrangler
+      - run: npm run deploy:prod

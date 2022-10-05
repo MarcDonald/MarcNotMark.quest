@@ -1,12 +1,22 @@
-name = "marcnotmark"
-
-workers_dev = true
-main = "./build/index.js"
 # https://developers.cloudflare.com/workers/platform/compatibility-dates
 compatibility_date = "2022-04-05"
 
+[env.production]
+name = "marcnotmark"
+main = "./build/index.js"
+workers_dev = false
+vars = { ENVIRONMENT = "production" }
 routes = [
 	{ pattern = "marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" }
+]
+
+[env.development]
+name = "marcnotmark-development"
+main = "./build/index.js"
+workers_dev = true
+vars = { ENVIRONMENT = "development" }
+routes = [
+	{ pattern = "development.marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" }
 ]
 
 [site]
