@@ -1,9 +1,13 @@
-name = "remix-cloudflare-workers"
+name = "marcnotmark"
 
 workers_dev = true
 main = "./build/index.js"
 # https://developers.cloudflare.com/workers/platform/compatibility-dates
 compatibility_date = "2022-04-05"
+
+routes = [
+	{ pattern = "marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" }
+]
 
 [site]
   bucket = "./public"
