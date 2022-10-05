@@ -1,6 +1,14 @@
 node_modules
-.cache
-api
-public/build
+
+/.cache
+/build
+/dist
+/public/build
+/.mf
+.env
+
+*.iml
+.idea
+.DS_Store
 *.css
 *.css.map
