@@ -1,15 +1,18 @@
+import type { LinksFunction } from '@remix-run/cloudflare';
+
+import styleSheet from '~/styles/homepage.css';
+
+export const links: LinksFunction = () => {
+	return [{ rel: 'stylesheet', href: styleSheet }];
+};
 export default function Index() {
 	return (
-		<div
-			style={{
-				fontFamily: 'system-ui, sans-serif',
-				lineHeight: '1.4',
-				textAlign: 'center',
-			}}
-		>
+		<main>
 			<h1>
-				It's <strong>MARC</strong> not Mark
+				My name is <br />
+				<strong>MARC</strong> <br />
+				not Mark
 			</h1>
-		</div>
+		</main>
 	);
 }

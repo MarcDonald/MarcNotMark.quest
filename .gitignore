@@ -6,4 +6,9 @@ node_modules
 /public/build
 /.mf
 .env
+
+*.iml
 .idea
+.DS_Store
+*.css
+*.css.map

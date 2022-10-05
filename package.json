@@ -1,10 +1,11 @@
 {
 	"sideEffects": false,
 	"scripts": {
-		"build": "remix build",
+		"build": "npm run sass && remix build",
 		"deploy:dev": "wrangler publish --env development",
 		"deploy:prod": "wrangler publish --env production",
 		"dev:remix": "remix watch",
+		"dev:sass": "sass --watch app/:app/",
 		"dev:miniflare": "cross-env NODE_ENV=development miniflare ./build/index.js --watch",
 		"dev": "remix build && run-p \"dev:*\"",
 		"start": "cross-env NODE_ENV=production miniflare ./build/index.js",
@@ -14,7 +15,8 @@
 		"format": "prettier --check .",
 		"format:fix": "prettier --write .",
 		"test": "echo \"TODO test\"",
-		"husky:prepare": "husky install"
+		"husky:prepare": "husky install",
+		"sass": "sass app/:app/"
 	},
 	"dependencies": {
 		"@remix-run/cloudflare": "1.7.2",
@@ -48,6 +50,7 @@
 		"eslint-plugin-react": "7.30.0",
 		"eslint-plugin-react-hooks": "4.6.0",
 		"husky": "8.0.1",
+		"sass": "1.55.0",
 		"lint-staged": "13.0.2"
 	},
 	"engines": {
