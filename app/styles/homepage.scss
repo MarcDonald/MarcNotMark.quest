@@ -14,3 +14,9 @@ strong {
 	font-size: 2em;
 	text-decoration: underline;
 }
+
+.card-wrapper {
+	background-color: var(--color-background);
+	border-radius: var(--corner-md);
+	padding: var(--spacing-xl);
+}

@@ -8,11 +8,13 @@ export const links: LinksFunction = () => {
 export default function Index() {
 	return (
 		<main>
-			<h1>
-				My name is <br />
-				<strong>MARC</strong> <br />
-				not Mark
-			</h1>
+			<div className={'card-wrapper'}>
+				<h1>
+					My name is <br />
+					<strong>MARC</strong> <br />
+					not Mark
+				</h1>
+			</div>
 		</main>
 	);
 }
