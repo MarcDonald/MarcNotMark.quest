@@ -21,11 +21,22 @@ import styleResetUrl from '~/styles/app/reset.css';
 import darkVariables from '~/styles/app/themes/variables-dark.css';
 import lightVariables from '~/styles/app/themes/variables-light.css';
 
-export const meta: MetaFunction = () => ({
-	charset: 'utf-8',
-	title: "It's Marc, not Mark!",
-	viewport: 'width=device-width,initial-scale=1',
-});
+export const meta: MetaFunction = () => {
+	const description =
+		'For every Marc born, there are 11 times as many Marks born. Help correct this injustice.';
+	return {
+		charset: 'utf-8',
+		title: "It's Marc, not Mark!",
+		author: 'Marc Donald',
+		description,
+		viewport: 'width=device-width,initial-scale=1',
+		keywords: 'marc,mark,name,misspelling',
+		'twitter:creator': '@DeveloperMarc',
+		'twitter:site': '@DeveloperMarc',
+		'twitter:title': "It's Marc, not Mark!",
+		'twitter:description': description,
+	};
+};
 
 const deviceLinks = () => [
 	{

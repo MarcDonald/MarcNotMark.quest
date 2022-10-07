@@ -5,6 +5,7 @@ import styleSheet from '~/styles/homepage.css';
 export const links: LinksFunction = () => {
 	return [{ rel: 'stylesheet', href: styleSheet }];
 };
+
 export default function Index() {
 	return (
 		<div className={'page-wrapper'}>
