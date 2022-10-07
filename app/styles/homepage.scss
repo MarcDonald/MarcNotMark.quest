@@ -1,22 +1,45 @@
-main {
+.page-wrapper {
+	display: flex;
 	height: 100%;
+	flex-direction: column;
+	padding: var(--spacing-lg);
+}
+
+.name-header {
+	flex-basis: 40%;
 	display: grid;
 	place-content: center;
 	text-align: center;
-	padding: 2rem;
-}
-
-h1 {
-	font-size: 3rem;
-}
-
-strong {
-	font-size: 2em;
-	text-decoration: underline;
-}
-
-.card-wrapper {
+	margin: var(--spacing-xl);
+	border-radius: var(--corner-lg);
 	background-color: var(--color-background);
-	border-radius: var(--corner-md);
-	padding: var(--spacing-xl);
+
+	h1 {
+		font-size: 6rem;
+	}
+	h2 {
+		font-size: 3rem;
+	}
+}
+
+.other-marcs {
+	flex-basis: 60%;
+	display: grid;
+	place-content: center;
+	text-align: center;
+	color: var(--color-text-on-page-background);
+
+	a {
+		font-size: 1.125rem;
+		color: var(--color-link-inline-on-page-background);
+
+		&:hover {
+			color: var(--color-link-inline-on-page-background-hover);
+		}
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		padding: 1rem;
+	}
 }

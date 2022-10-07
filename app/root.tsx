@@ -23,7 +23,7 @@ import lightVariables from '~/styles/app/themes/variables-light.css';
 
 export const meta: MetaFunction = () => ({
 	charset: 'utf-8',
-	title: 'My name is Marc not Mark',
+	title: "The Name's Marc, not Mark!",
 	viewport: 'width=device-width,initial-scale=1',
 });
 

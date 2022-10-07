@@ -7,14 +7,23 @@ export const links: LinksFunction = () => {
 };
 export default function Index() {
 	return (
-		<main>
-			<div className={'card-wrapper'}>
-				<h1>
-					My name is <br />
-					<strong>MARC</strong> <br />
-					not Mark
-				</h1>
-			</div>
-		</main>
+		<div className={'page-wrapper'}>
+			<header className={'name-header'}>
+				<h1>The Name's Marc</h1>
+				<h2>Not Mark!</h2>
+			</header>
+			<main className={'other-marcs'}>
+				<a href={'https://en.wikipedia.org/wiki/Marc_Okrand'}>
+					Ever enjoy a glass of chech'tluth while polishing your bat'leth?
+				</a>
+				<a href={'https://en.wikipedia.org/wiki/Marc_Gr%C3%A9goire'}>
+					Do you like not having your food stick to your pot as you're cooking?
+				</a>
+				<a href={'https://id.iit.edu/people/dr-marc-r-hannah'}>
+					Are you nostalgic for the graphics of games from the 90s?
+				</a>
+				<h3>All of these were brought to you by a Marc!</h3>
+			</main>
+		</div>
 	);
 }
