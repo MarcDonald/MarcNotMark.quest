@@ -1,22 +1,88 @@
-main {
+@use 'app/breakpoints';
+
+.page-wrapper {
+	display: flex;
 	height: 100%;
+	flex-direction: column;
+	padding: var(--spacing-lg);
+}
+
+.name-header {
+	flex-basis: 40%;
 	display: grid;
 	place-content: center;
 	text-align: center;
-	padding: 2rem;
-}
-
-h1 {
-	font-size: 3rem;
-}
-
-strong {
-	font-size: 2em;
-	text-decoration: underline;
-}
-
-.card-wrapper {
+	margin: var(--spacing-xl);
+	padding: var(--spacing-lg);
+	border-radius: var(--corner-lg);
 	background-color: var(--color-background);
-	border-radius: var(--corner-md);
-	padding: var(--spacing-xl);
+
+	h1 {
+		font-size: 6rem;
+
+		@media (max-width: breakpoints.$phoneMax) {
+			font-size: 4.5rem;
+		}
+	}
+
+	h2 {
+		font-size: 3rem;
+		@media (max-width: breakpoints.$phoneMax) {
+			margin-top: 1rem;
+			font-size: 2rem;
+		}
+	}
+}
+
+#short-header {
+	display: none;
+
+	@media (max-width: breakpoints.$phoneMax) {
+		display: block;
+	}
+}
+
+#long-header {
+	@media (max-width: breakpoints.$phoneMax) {
+		display: none;
+	}
+}
+
+.other-marcs {
+	flex-basis: 60%;
+	display: grid;
+	place-content: center;
+	text-align: center;
+	color: var(--color-text-on-page-background);
+
+	a {
+		font-size: 1.125rem;
+		color: var(--color-link-inline-on-page-background);
+		margin-bottom: 8px;
+
+		&:hover {
+			color: var(--color-link-inline-on-page-background-hover);
+		}
+	}
+
+	h3 {
+		font-size: 1.5rem;
+		padding: 1rem;
+	}
+}
+
+footer {
+	flex-basis: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-primary {
+	font-size: 0.8rem;
+}
+
+.footer-secondary {
+	font-size: 0.7rem;
 }
