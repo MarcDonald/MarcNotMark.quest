@@ -1,3 +1,5 @@
+@use 'app/breakpoints';
+
 .page-wrapper {
 	display: flex;
 	height: 100%;
@@ -11,14 +13,38 @@
 	place-content: center;
 	text-align: center;
 	margin: var(--spacing-xl);
+	padding: var(--spacing-lg);
 	border-radius: var(--corner-lg);
 	background-color: var(--color-background);
 
 	h1 {
 		font-size: 6rem;
+
+		@media (max-width: breakpoints.$phoneMax) {
+			font-size: 4.5rem;
+		}
 	}
+
 	h2 {
 		font-size: 3rem;
+		@media (max-width: breakpoints.$phoneMax) {
+			margin-top: 1rem;
+			font-size: 2rem;
+		}
+	}
+}
+
+#short-header {
+	display: none;
+
+	@media (max-width: breakpoints.$phoneMax) {
+		display: block;
+	}
+}
+
+#long-header {
+	@media (max-width: breakpoints.$phoneMax) {
+		display: none;
 	}
 }
 
@@ -32,6 +58,7 @@
 	a {
 		font-size: 1.125rem;
 		color: var(--color-link-inline-on-page-background);
+		margin-bottom: 8px;
 
 		&:hover {
 			color: var(--color-link-inline-on-page-background-hover);

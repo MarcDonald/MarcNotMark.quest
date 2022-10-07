@@ -9,7 +9,8 @@ export default function Index() {
 	return (
 		<div className={'page-wrapper'}>
 			<header className={'name-header'}>
-				<h1>The Name's Marc</h1>
+				<h1 id={'short-header'}>It's Marc</h1>
+				<h1 id={'long-header'}>The Name's Marc</h1>
 				<h2>Not Mark!</h2>
 			</header>
 			<main className={'other-marcs'}>
