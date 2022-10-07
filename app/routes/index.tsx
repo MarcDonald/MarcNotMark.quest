@@ -26,6 +26,12 @@ export default function Index() {
 				</a>
 				<h3>All of these were brought to you by a Marc!</h3>
 			</main>
+			<footer>
+				<p className={'footer-primary'}>
+					Created by <a href={'https://marcdonald.com'}>Marc Donald</a>
+				</p>
+				<p className={'footer-secondary'}>(not Mark Donald)</p>
+			</footer>
 		</div>
 	);
 }

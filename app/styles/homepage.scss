@@ -70,3 +70,19 @@
 		padding: 1rem;
 	}
 }
+
+footer {
+	flex-basis: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-primary {
+	font-size: 0.8rem;
+}
+
+.footer-secondary {
+	font-size: 0.7rem;
+}
