@@ -28,14 +28,14 @@ export default function Index() {
 				<h3>All of these were brought to you by a Marc!</h3>
 			</main>
 			<footer>
-				<div>{/*Spacer*/}</div>
+				<div className={'footer-corner-icon'}>{/*Spacer*/}</div>
 				<div className={'footer-credits-wrapper'}>
 					<p className={'footer-primary'}>
 						Created by <a href={'https://marcdonald.com'}>Marc Donald</a>
 					</p>
 					<p className={'footer-secondary'}>(not Mark Donald)</p>
 				</div>
-				<div className={'footer-code-wrapper'}>
+				<div className={'footer-corner-icon'}>
 					<a href={'https://github.com/MarcDonald/MarcNotMark.quest'}>
 						<GitHub />
 					</a>
