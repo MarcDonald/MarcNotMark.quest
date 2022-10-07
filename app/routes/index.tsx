@@ -1,4 +1,5 @@
 import type { LinksFunction } from '@remix-run/cloudflare';
+import { GitHub } from 'react-feather';
 
 import styleSheet from '~/styles/homepage.css';
 
@@ -27,10 +28,18 @@ export default function Index() {
 				<h3>All of these were brought to you by a Marc!</h3>
 			</main>
 			<footer>
-				<p className={'footer-primary'}>
-					Created by <a href={'https://marcdonald.com'}>Marc Donald</a>
-				</p>
-				<p className={'footer-secondary'}>(not Mark Donald)</p>
+				<div>{/*Spacer*/}</div>
+				<div className={'footer-credits-wrapper'}>
+					<p className={'footer-primary'}>
+						Created by <a href={'https://marcdonald.com'}>Marc Donald</a>
+					</p>
+					<p className={'footer-secondary'}>(not Mark Donald)</p>
+				</div>
+				<div className={'footer-code-wrapper'}>
+					<a href={'https://github.com/MarcDonald/MarcNotMark.quest'}>
+						<GitHub />
+					</a>
+				</div>
 			</footer>
 		</div>
 	);
