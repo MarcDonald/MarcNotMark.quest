@@ -7,7 +7,8 @@ main = "./build/index.js"
 workers_dev = false
 vars = { ENVIRONMENT = "production" }
 routes = [
-    { pattern = "marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" }
+    { pattern = "marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" },
+    { pattern = "www.marcnotmark.quest", custom_domain = true, zone_name = "marcnotmark.quest" }
 ]
 
 [env.development]
