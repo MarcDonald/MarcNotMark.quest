@@ -1,6 +1,6 @@
-# Marc NOT Mark
+# The name's Marc, not Mark!
 
-It's MARC not Mark
+For every Marc born, there are 11 times as many Marks born. Help correct this injustice.
 
 ## Development
 
